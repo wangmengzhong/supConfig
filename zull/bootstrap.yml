@@ -1,0 +1,33 @@
+server:
+  port: 8762
+spring:
+  profiles:
+    active:  test
+  application:
+    name: api-zull
+management:
+    security:
+      enabled: false
+zuul:
+  addHostHeader: true
+  host:
+    ConnectTimeOutMillis: 6000
+    SocketTimeOutMillis: 6000
+  routes:
+    ##简单路由配置
+    simpleRouter:
+      path: /getBlog
+      url: http://localhost/web/rest/blog/
+    punch_web:
+      path: /punch_web/**
+      url: http://localhost/web/rest/blog/
+    service-web:
+      path: /zull/**
+      serviceId: service-web
+ribbon:
+  MaxAutoRetiresNextServer: 2  #换服务次数
+  MaxAutoRetires: 2  #重试次数
+  ConnectTimeOut: 6000
+  ReadTimeOut: 6000
+  OkToRetureOnAllOperations: true
+  
