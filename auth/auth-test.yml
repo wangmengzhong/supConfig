@@ -27,4 +27,4 @@ spring:
       max-idle: 10
       # 连接池中的最小空闲连接
       min-idle: 0
-word: hello11
+word: hello12
