@@ -15,11 +15,6 @@ spring:
     active:  test
   application:
     name: service-web
-  rabbitmq:
-    host: 192.168.8.128
-    port: 5672
-    username: guest
-    password: guest
   cloud:
     stream:
       bindings:
